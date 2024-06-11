@@ -57,7 +57,7 @@ class _DateWidgetState extends State<DateWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -85,7 +85,7 @@ class _DateWidgetState extends State<DateWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -149,9 +149,9 @@ class _DateWidgetState extends State<DateWidget> {
                                   ],
                                 ),
                               ]
-                                  .divide(SizedBox(height: 4.0))
-                                  .addToStart(SizedBox(height: 12.0))
-                                  .addToEnd(SizedBox(height: 12.0)),
+                                  .divide(const SizedBox(height: 4.0))
+                                  .addToStart(const SizedBox(height: 12.0))
+                                  .addToEnd(const SizedBox(height: 12.0)),
                             ),
                           ),
                         ),

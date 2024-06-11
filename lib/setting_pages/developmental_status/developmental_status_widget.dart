@@ -51,7 +51,7 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -67,7 +67,7 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -76,12 +76,13 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 5.0,
                       color: Color(0x3416202A),
@@ -95,14 +96,15 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      0.0, 12.0, 0.0, 12.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           '開発履歴とバージョン',
                           style:
@@ -113,9 +115,9 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               28.0, 12.0, 0.0, 0.0),
                           child: Text(
                             'ver0.5：プロトタイプ（2024.06.09）',
@@ -134,12 +136,13 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 5.0,
                       color: Color(0x3416202A),
@@ -153,14 +156,15 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      0.0, 12.0, 0.0, 12.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           '開発担当者',
                           style:
@@ -171,9 +175,9 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               28.0, 12.0, 0.0, 0.0),
                           child: Text(
                             '所属：熱環境システム工学G　木澤陸斗\n期間：2024.06~\n連絡先：sfb03050@st.osakafu-u.ac.jp',
@@ -192,12 +196,13 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       blurRadius: 5.0,
                       color: Color(0x3416202A),
@@ -211,14 +216,15 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                      0.0, 12.0, 0.0, 12.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 0.0, 0.0),
                         child: Text(
                           '開発環境',
                           style:
@@ -229,9 +235,9 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               28.0, 12.0, 0.0, 0.0),
                           child: Text(
                             'Flutter3.22.1',

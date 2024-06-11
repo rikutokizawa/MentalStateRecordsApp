@@ -61,7 +61,7 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
                       : FocusScope.of(context).unfocus(),
                   child: Padding(
                     padding: MediaQuery.viewInsetsOf(context),
-                    child: BtmCreateItemsWidget(),
+                    child: const BtmCreateItemsWidget(),
                   ),
                 );
               },
@@ -83,7 +83,7 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -99,7 +99,7 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -108,7 +108,8 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
               child: Text(
                 '現在の測定項目',
                 style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -128,14 +129,14 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
                   itemBuilder: (context, itemsIndex) {
                     final itemsItem = items[itemsIndex];
                     return Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 12.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 5.0,
                               color: Color(0x3416202A),
@@ -148,7 +149,7 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 12.0, 0.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -159,8 +160,8 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.0, -1.0),
+                                      alignment: const AlignmentDirectional(
+                                          -1.0, -1.0),
                                       child: Text(
                                         itemsItem.name,
                                         style: FlutterFlowTheme.of(context)
@@ -173,8 +174,9 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 8.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -218,8 +220,9 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 8.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -259,33 +262,29 @@ class _ListOfItemsWidgetState extends State<ListOfItemsWidget> {
                                 ),
                                 showLoadingIndicator: true,
                                 onPressed: () async {
-                                  var confirmDialogResponse =
-                                      await showDialog<bool>(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('データを削除します'),
-                                                content: Text('本当によろしいですか？'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext,
-                                                            false),
-                                                    child: Text('やめる'),
-                                                  ),
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext,
-                                                            true),
-                                                    child: Text('削除'),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          ) ??
-                                          false;
+                                  var confirmDialogResponse = await showDialog<
+                                          bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: const Text('データを削除します'),
+                                            content: const Text('本当によろしいですか？'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: const Text('やめる'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: const Text('削除'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
                                   if (confirmDialogResponse) {
                                     FFAppState()
                                         .removeFromMeasurementItems(itemsItem);

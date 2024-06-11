@@ -66,7 +66,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -83,8 +83,8 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 16.0, 0.0, 0.0),
                       child: Text(
                         '現在の設定',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -100,7 +100,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -108,7 +108,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 5.0,
                                     color: Color(0x3416202A),
@@ -122,7 +122,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -134,8 +134,8 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           '実験時間',
                                           style: FlutterFlowTheme.of(context)
@@ -184,8 +184,9 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                       borderColor: Colors.transparent,
                                       borderWidth: 0.0,
                                       borderRadius: 0.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 8.0, 4.0),
+                                      margin:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              16.0, 4.0, 8.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
                                       isSearchable: false,
@@ -197,14 +198,14 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 0.0),
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 5.0,
                                     color: Color(0x3416202A),
@@ -218,13 +219,14 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 0.0),
                                       child: FaIcon(
                                         FontAwesomeIcons.list,
                                         color: FlutterFlowTheme.of(context)
@@ -234,8 +236,8 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(12.0, 0.0, 0.0, 0.0),
                                         child: Container(
                                           width: double.infinity,
                                           color: Colors.white,
@@ -336,7 +338,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                AlignmentDirectional(
+                                                                const AlignmentDirectional(
                                                                     -1.0, -1.0),
                                                             child: Text(
                                                               measurementItemsItem
@@ -462,7 +464,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                                   );
                                                 },
                                               ),
-                                              theme: ExpandableThemeData(
+                                              theme: const ExpandableThemeData(
                                                 tapHeaderToExpand: true,
                                                 tapBodyToExpand: false,
                                                 tapBodyToCollapse: false,
@@ -482,7 +484,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 0.0),
                             child: Container(
                               width: double.infinity,
@@ -490,7 +492,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 5.0,
                                     color: Color(0x3416202A),
@@ -504,7 +506,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                 shape: BoxShape.rectangle,
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -516,8 +518,8 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(12.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           '被験者名',
                                           style: FlutterFlowTheme.of(context)
@@ -566,8 +568,9 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                       borderColor: Colors.transparent,
                                       borderWidth: 0.0,
                                       borderRadius: 0.0,
-                                      margin: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 4.0, 8.0, 4.0),
+                                      margin:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              16.0, 4.0, 8.0, 4.0),
                                       hidesUnderline: true,
                                       isOverButton: false,
                                       isSearchable: false,
@@ -579,14 +582,14 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 0.0),
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 5.0,
                                     color: Color(0x3416202A),
@@ -603,7 +606,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.all(8.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -615,9 +618,8 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                         ),
                                         Expanded(
                                           child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(12.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               'データタイトル',
                                               style:
@@ -635,8 +637,9 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 12.0, 12.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 12.0, 12.0),
                                     child: TextFormField(
                                       controller: _model.textController,
                                       focusNode: _model.textFieldFocusNode,
@@ -678,9 +681,9 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.0, 1.0),
+                      alignment: const AlignmentDirectional(0.0, 1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 0.0, 24.0),
                         child: FFButtonWidget(
                           onPressed: () async {
@@ -735,9 +738,9 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                           options: FFButtonOptions(
                             width: 200.0,
                             height: 57.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -750,7 +753,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                   fontWeight: FontWeight.bold,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

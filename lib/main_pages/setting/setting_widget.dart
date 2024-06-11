@@ -53,7 +53,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -64,7 +64,8 @@ class _SettingWidgetState extends State<SettingWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                 child: Text(
                   '試験設定',
                   style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -74,7 +75,8 @@ class _SettingWidgetState extends State<SettingWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -88,7 +90,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                     height: 60.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 5.0,
                           color: Color(0x3416202A),
@@ -102,7 +104,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                       shape: BoxShape.rectangle,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -113,7 +115,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '被験者の管理',
@@ -127,7 +129,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.9, 0.0),
+                            alignment: const AlignmentDirectional(0.9, 0.0),
                             child: Icon(
                               Icons.arrow_forward_ios,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -141,7 +143,8 @@ class _SettingWidgetState extends State<SettingWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -155,7 +158,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                     height: 60.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 5.0,
                           color: Color(0x3416202A),
@@ -169,7 +172,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                       shape: BoxShape.rectangle,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -180,7 +183,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '測定項目の管理',
@@ -194,7 +197,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.9, 0.0),
+                            alignment: const AlignmentDirectional(0.9, 0.0),
                             child: Icon(
                               Icons.arrow_forward_ios,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -208,7 +211,8 @@ class _SettingWidgetState extends State<SettingWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -222,7 +226,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                     height: 60.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 5.0,
                           color: Color(0x3416202A),
@@ -236,7 +240,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                       shape: BoxShape.rectangle,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -247,7 +251,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '試験時間の管理',
@@ -261,7 +265,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.9, 0.0),
+                            alignment: const AlignmentDirectional(0.9, 0.0),
                             child: Icon(
                               Icons.arrow_forward_ios,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -275,7 +279,8 @@ class _SettingWidgetState extends State<SettingWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
                 child: Text(
                   'その他',
                   style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -285,7 +290,8 @@ class _SettingWidgetState extends State<SettingWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -299,7 +305,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                     height: 60.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 5.0,
                           color: Color(0x3416202A),
@@ -313,7 +319,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                       shape: BoxShape.rectangle,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -324,7 +330,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'データ管理',
@@ -338,7 +344,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.9, 0.0),
+                            alignment: const AlignmentDirectional(0.9, 0.0),
                             child: Icon(
                               Icons.arrow_forward_ios,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -352,7 +358,8 @@ class _SettingWidgetState extends State<SettingWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding:
+                    const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
                 child: InkWell(
                   splashColor: Colors.transparent,
                   focusColor: Colors.transparent,
@@ -366,7 +373,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                     height: 60.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           blurRadius: 5.0,
                           color: Color(0x3416202A),
@@ -380,7 +387,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                       shape: BoxShape.rectangle,
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -391,7 +398,7 @@ class _SettingWidgetState extends State<SettingWidget> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '開発状況',

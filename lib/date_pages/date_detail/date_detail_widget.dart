@@ -62,7 +62,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -78,7 +78,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -97,13 +97,13 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                   children: [
                     Expanded(
                       child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            4.0, 4.0, 4.0, 4.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -133,7 +133,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 6.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -161,7 +161,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 6.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -201,7 +201,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 6.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -246,8 +246,9 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
                                         formatNumber(
@@ -275,8 +276,9 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '回測定）',
                                       style: FlutterFlowTheme.of(context)
@@ -291,7 +293,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 6.0, 0.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -326,8 +328,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                     ),
                     Builder(
                       builder: (context) => Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 24.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 24.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderRadius: 32.0,
                           borderWidth: 1.0,
@@ -370,7 +372,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                     itemBuilder: (context, resultIndex) {
                       final resultItem = result[resultIndex];
                       return Container(
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Container(
                           width: double.infinity,
                           color: Colors.white,
@@ -378,7 +380,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                             initialExpanded: false,
                             child: ExpandablePanel(
                               header: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   resultItem,
@@ -391,7 +393,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                 ),
                               ),
                               collapsed: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -412,11 +414,11 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.0, -1.0),
+                                      alignment: const AlignmentDirectional(
+                                          -1.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 8.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(12.0, 8.0, 0.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -425,7 +427,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                 BorderRadius.circular(0.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Text(
                                               '生データ',
                                               style: FlutterFlowTheme.of(
@@ -444,8 +446,9 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 0.0, 12.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              12.0, 0.0, 12.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -491,7 +494,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                       ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 8.0)),
+                                        ].divide(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                     Builder(
@@ -526,8 +529,9 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                         .accent4,
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
@@ -583,8 +587,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                                 ),
                                                       ),
                                                     ),
-                                                  ].divide(
-                                                      SizedBox(width: 8.0)),
+                                                  ].divide(const SizedBox(
+                                                      width: 8.0)),
                                                 ),
                                               ),
                                             );
@@ -593,11 +597,11 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                       },
                                     ),
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.0, -1.0),
+                                      alignment: const AlignmentDirectional(
+                                          -1.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 8.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(12.0, 8.0, 0.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -606,7 +610,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                 BorderRadius.circular(0.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Text(
                                               'グラフ',
                                               style: FlutterFlowTheme.of(
@@ -625,9 +629,10 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 24.0, 24.0, 0.0),
-                                      child: Container(
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              12.0, 24.0, 24.0, 0.0),
+                                      child: SizedBox(
                                         width: 370.0,
                                         height: 230.0,
                                         child: FlutterFlowLineChart(
@@ -677,8 +682,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                             showGrid: true,
                                             showBorder: false,
                                           ),
-                                          axisBounds: AxisBounds(),
-                                          xAxisLabelInfo: AxisLabelInfo(
+                                          axisBounds: const AxisBounds(),
+                                          xAxisLabelInfo: const AxisLabelInfo(
                                             title: '経過時間[s]',
                                             titleTextStyle: TextStyle(
                                               fontSize: 14.0,
@@ -687,7 +692,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                             labelInterval: 100.0,
                                             reservedSize: 18.0,
                                           ),
-                                          yAxisLabelInfo: AxisLabelInfo(
+                                          yAxisLabelInfo: const AxisLabelInfo(
                                             title: '計測値',
                                             titleTextStyle: TextStyle(
                                               fontSize: 14.0,
@@ -702,7 +707,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   ],
                                 ),
                               ),
-                              theme: ExpandableThemeData(
+                              theme: const ExpandableThemeData(
                                 tapHeaderToExpand: true,
                                 tapBodyToExpand: false,
                                 tapBodyToCollapse: false,
@@ -730,8 +735,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                     controller: _model.expandableExpandableController2,
                     child: ExpandablePanel(
                       header: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           '全てのデータ',
                           style: FlutterFlowTheme.of(context)
@@ -743,8 +748,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                         ),
                       ),
                       collapsed: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -794,7 +799,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 12.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -835,7 +840,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                             Builder(
@@ -860,8 +865,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                 .accent4,
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(12.0, 0.0, 12.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -907,7 +912,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                         ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 8.0)),
+                                          ].divide(const SizedBox(width: 8.0)),
                                         ),
                                       ),
                                     );
@@ -918,7 +923,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                           ],
                         ),
                       ),
-                      theme: ExpandableThemeData(
+                      theme: const ExpandableThemeData(
                         tapHeaderToExpand: true,
                         tapBodyToExpand: false,
                         tapBodyToCollapse: false,

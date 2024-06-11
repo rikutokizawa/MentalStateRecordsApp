@@ -62,7 +62,7 @@ class _ListOfSubjectsWidgetState extends State<ListOfSubjectsWidget> {
                       : FocusScope.of(context).unfocus(),
                   child: Padding(
                     padding: MediaQuery.viewInsetsOf(context),
-                    child: BtmCreateSubjectWidget(),
+                    child: const BtmCreateSubjectWidget(),
                   ),
                 );
               },
@@ -84,7 +84,7 @@ class _ListOfSubjectsWidgetState extends State<ListOfSubjectsWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -100,7 +100,7 @@ class _ListOfSubjectsWidgetState extends State<ListOfSubjectsWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -109,7 +109,8 @@ class _ListOfSubjectsWidgetState extends State<ListOfSubjectsWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
               child: Text(
                 '現在の登録者',
                 style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -129,14 +130,14 @@ class _ListOfSubjectsWidgetState extends State<ListOfSubjectsWidget> {
                   itemBuilder: (context, subjectsIndex) {
                     final subjectsItem = subjects[subjectsIndex];
                     return Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 12.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 5.0,
                               color: Color(0x3416202A),
@@ -149,7 +150,7 @@ class _ListOfSubjectsWidgetState extends State<ListOfSubjectsWidget> {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 12.0, 0.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -164,7 +165,7 @@ class _ListOfSubjectsWidgetState extends State<ListOfSubjectsWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     subjectsItem.name,
@@ -188,33 +189,29 @@ class _ListOfSubjectsWidgetState extends State<ListOfSubjectsWidget> {
                                 ),
                                 showLoadingIndicator: true,
                                 onPressed: () async {
-                                  var confirmDialogResponse =
-                                      await showDialog<bool>(
-                                            context: context,
-                                            builder: (alertDialogContext) {
-                                              return AlertDialog(
-                                                title: Text('被験者を削除します'),
-                                                content: Text('本当によろしいですか？'),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext,
-                                                            false),
-                                                    child: Text('やめる'),
-                                                  ),
-                                                  TextButton(
-                                                    onPressed: () =>
-                                                        Navigator.pop(
-                                                            alertDialogContext,
-                                                            true),
-                                                    child: Text('削除'),
-                                                  ),
-                                                ],
-                                              );
-                                            },
-                                          ) ??
-                                          false;
+                                  var confirmDialogResponse = await showDialog<
+                                          bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: const Text('被験者を削除します'),
+                                            content: const Text('本当によろしいですか？'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: const Text('やめる'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: const Text('削除'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
                                   if (confirmDialogResponse) {
                                     FFAppState()
                                         .removeFromSubjects(subjectsItem);

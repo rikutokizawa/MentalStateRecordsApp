@@ -50,7 +50,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: AlignmentDirectional(0.0, -1.0),
+      alignment: const AlignmentDirectional(0.0, -1.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(0.0),
         child: BackdropFilter(
@@ -63,7 +63,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
             height: double.infinity,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   blurRadius: 7.0,
                   color: Color(0x33000000),
@@ -73,7 +73,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
                   ),
                 )
               ],
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(0.0),
                 bottomRight: Radius.circular(0.0),
                 topLeft: Radius.circular(16.0),
@@ -81,7 +81,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
               ),
             ),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +121,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 0.0, 0.0),
                           child: Text(
                             '新しい試験時間の登録',
@@ -134,7 +134,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 4.0, 0.0, 0.0),
                           child: Text(
                             '被験者情報を入力してください',
@@ -147,7 +147,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 23.0, 12.0, 0.0),
                           child: TextFormField(
                             controller: _model.textController1,
@@ -213,7 +213,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 23.0, 12.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController2,
@@ -282,7 +282,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 23.0, 12.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController3,
@@ -355,8 +355,8 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 44.0, 16.0, 44.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        16.0, 44.0, 16.0, 44.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         if (_model.formKey.currentState == null ||
@@ -381,10 +381,10 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 50.0,
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -393,7 +393,7 @@ class _BtmCreateTimesWidgetState extends State<BtmCreateTimesWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 2.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

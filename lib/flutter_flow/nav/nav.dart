@@ -38,32 +38,33 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => NavBarPage(),
+      errorBuilder: (context, state) => const NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => NavBarPage(),
+          builder: (context, _) => const NavBarPage(),
         ),
         FFRoute(
           name: 'date',
           path: '/date',
-          builder: (context, params) =>
-              params.isEmpty ? NavBarPage(initialPage: 'date') : DateWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'date')
+              : const DateWidget(),
         ),
         FFRoute(
           name: 'setting',
           path: '/setting',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'setting')
-              : SettingWidget(),
+              ? const NavBarPage(initialPage: 'setting')
+              : const SettingWidget(),
         ),
         FFRoute(
           name: 'measure',
           path: '/measure',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'measure')
-              : MeasureWidget(),
+              ? const NavBarPage(initialPage: 'measure')
+              : const MeasureWidget(),
         ),
         FFRoute(
           name: 'measure_record',
@@ -101,27 +102,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ListOfSubjects',
           path: '/listOfSubjects',
-          builder: (context, params) => ListOfSubjectsWidget(),
+          builder: (context, params) => const ListOfSubjectsWidget(),
         ),
         FFRoute(
           name: 'ListOfItems',
           path: '/listOfItems',
-          builder: (context, params) => ListOfItemsWidget(),
+          builder: (context, params) => const ListOfItemsWidget(),
         ),
         FFRoute(
           name: 'ListOfTimes',
           path: '/listOfTimes',
-          builder: (context, params) => ListOfTimesWidget(),
+          builder: (context, params) => const ListOfTimesWidget(),
         ),
         FFRoute(
           name: 'DevelopmentalStatus',
           path: '/developmentalStatus',
-          builder: (context, params) => DevelopmentalStatusWidget(),
+          builder: (context, params) => const DevelopmentalStatusWidget(),
         ),
         FFRoute(
           name: 'ListOfDate',
           path: '/listOfDate',
-          builder: (context, params) => ListOfDateWidget(),
+          builder: (context, params) => const ListOfDateWidget(),
         ),
         FFRoute(
           name: 'DateDetail',
@@ -299,7 +300,8 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() =>
+      const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

@@ -53,7 +53,7 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -69,7 +69,7 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -78,7 +78,8 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
+              padding:
+                  const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 0.0),
               child: Text(
                 '現在のデータ',
                 style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -98,14 +99,14 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
                   itemBuilder: (context, resultDateIndex) {
                     final resultDateItem = resultDate[resultDateIndex];
                     return Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          16.0, 12.0, 16.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                               blurRadius: 5.0,
                               color: Color(0x3416202A),
@@ -118,7 +119,7 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 12.0, 0.0, 12.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -129,8 +130,8 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.0, -1.0),
+                                      alignment: const AlignmentDirectional(
+                                          -1.0, -1.0),
                                       child: Text(
                                         valueOrDefault<String>(
                                           resultDateItem.title,
@@ -146,8 +147,9 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 8.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -174,8 +176,9 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 0.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 8.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -220,8 +223,8 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
                                             context: context,
                                             builder: (alertDialogContext) {
                                               return AlertDialog(
-                                                title: Text('データを削除します'),
-                                                content: Text(
+                                                title: const Text('データを削除します'),
+                                                content: const Text(
                                                     '【要注意！！！！】ゴミ箱機能はないので復旧できません。本当によろしいですか？'),
                                                 actions: [
                                                   TextButton(
@@ -229,14 +232,14 @@ class _ListOfDateWidgetState extends State<ListOfDateWidget> {
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             false),
-                                                    child: Text('やめる'),
+                                                    child: const Text('やめる'),
                                                   ),
                                                   TextButton(
                                                     onPressed: () =>
                                                         Navigator.pop(
                                                             alertDialogContext,
                                                             true),
-                                                    child: Text('削除'),
+                                                    child: const Text('削除'),
                                                   ),
                                                 ],
                                               );

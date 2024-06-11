@@ -69,7 +69,7 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -88,9 +88,9 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 0.0, 0.0),
                             child: Text(
                               '被験者名：',
@@ -104,9 +104,9 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(-1.0, -1.0),
+                          alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 0.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
@@ -125,9 +125,9 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                       ],
                     ),
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 0.0, 0.0),
                         child: Text(
                           '残り時間',
@@ -140,10 +140,10 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
                       child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 12.0, 0.0, 0.0),
                         child: FlutterFlowTimer(
                           initialTime: widget.time!.experimentTime * 1000,
                           getDisplayTime: (value) =>
@@ -153,7 +153,8 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                             milliSecond: false,
                           ),
                           controller: _model.timerController1,
-                          updateStateInterval: Duration(milliseconds: 1000),
+                          updateStateInterval:
+                              const Duration(milliseconds: 1000),
                           onChanged: (value, displayTime, shouldUpdate) {
                             _model.timerMilliseconds1 = value;
                             _model.timerValue1 = displayTime;
@@ -172,8 +173,8 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                     ),
                     if (!_model.measuring)
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 24.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.timerController1.onStartTimer();
@@ -214,9 +215,9 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                           options: FFButtonOptions(
                             width: 200.0,
                             height: 57.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -229,7 +230,7 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                   fontWeight: FontWeight.bold,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -239,8 +240,8 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                       ),
                     if (_model.measuring)
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 24.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             _model.timerController1.onStopTimer();
@@ -263,9 +264,9 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                           options: FFButtonOptions(
                             width: 200.0,
                             height: 57.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).tertiary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -278,7 +279,7 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                   fontWeight: FontWeight.bold,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -287,15 +288,15 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                         ),
                       ),
                     Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                      padding: const EdgeInsetsDirectional.fromSTEB(
+                          0.0, 16.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '記録（現在の経過時間：',
@@ -318,7 +319,8 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                               milliSecond: false,
                             ),
                             controller: _model.timerController2,
-                            updateStateInterval: Duration(milliseconds: 1000),
+                            updateStateInterval:
+                                const Duration(milliseconds: 1000),
                             onChanged: (value, displayTime, shouldUpdate) {
                               _model.timerMilliseconds2 = value;
                               _model.timerValue2 = displayTime;
@@ -335,7 +337,7 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                 ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(-1.0, -1.0),
+                            alignment: const AlignmentDirectional(-1.0, -1.0),
                             child: Text(
                               '秒）',
                               style: FlutterFlowTheme.of(context)
@@ -351,8 +353,8 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                     ),
                     if (_model.measuring)
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 12.0, 0.0, 0.0),
                         child: Builder(
                           builder: (context) {
                             final measurementtime =
@@ -366,14 +368,14 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                 final measurementtimeItem =
                                     measurementtime[measurementtimeIndex];
                                 return Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 12.0, 16.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 5.0,
                                           color: Color(0x3416202A),
@@ -387,15 +389,15 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                       shape: BoxShape.rectangle,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 12.0, 0.0, 12.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 12.0, 0.0, 12.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 0.0, 8.0, 0.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -404,7 +406,7 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                                 Expanded(
                                                   child: Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Text(
                                                       measurementtimeItem
@@ -448,13 +450,13 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                                   options: FFButtonOptions(
                                                     height: 40.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
+                                                            24.0, 0.0),
                                                     iconPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
@@ -468,7 +470,8 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: BorderSide(
+                                                    borderSide:
+                                                        const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -500,9 +503,9 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(-1.0, -1.0),
+                      alignment: const AlignmentDirectional(-1.0, -1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 0.0, 0.0),
                         child: Text(
                           'しんどいときはこれを押してね\n（データは記録されないので注意）',
@@ -515,9 +518,9 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.0, 1.0),
+                      alignment: const AlignmentDirectional(0.0, 1.0),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 12.0, 0.0, 24.0),
                         child: FFButtonWidget(
                           onPressed: () async {
@@ -525,18 +528,18 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                   context: context,
                                   builder: (alertDialogContext) {
                                     return AlertDialog(
-                                      title: Text('計測を終了します'),
-                                      content: Text('本当によろしいですか？'),
+                                      title: const Text('計測を終了します'),
+                                      content: const Text('本当によろしいですか？'),
                                       actions: [
                                         TextButton(
                                           onPressed: () => Navigator.pop(
                                               alertDialogContext, false),
-                                          child: Text('継続する'),
+                                          child: const Text('継続する'),
                                         ),
                                         TextButton(
                                           onPressed: () => Navigator.pop(
                                               alertDialogContext, true),
-                                          child: Text('終了する'),
+                                          child: const Text('終了する'),
                                         ),
                                       ],
                                     );
@@ -556,9 +559,9 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                           options: FFButtonOptions(
                             width: 200.0,
                             height: 57.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 24.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).alternate,
                             textStyle: FlutterFlowTheme.of(context)
@@ -572,7 +575,7 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                   fontWeight: FontWeight.bold,
                                 ),
                             elevation: 3.0,
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

@@ -21,7 +21,7 @@ class BtmCreateTimesModel extends FlutterFlowModel<BtmCreateTimesWidget> {
       return 'Field is required';
     }
 
-    if (val.length < 1) {
+    if (val.isEmpty) {
       return 'Requires at least 1 characters.';
     }
 

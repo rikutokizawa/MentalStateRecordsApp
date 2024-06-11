@@ -35,7 +35,7 @@ class MeasureModel extends FlutterFlowModel<MeasureWidget> {
       return 'Field is required';
     }
 
-    if (val.length < 1) {
+    if (val.isEmpty) {
       return 'Requires at least 1 characters.';
     }
 
