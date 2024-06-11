@@ -1,5 +1,7 @@
 // ignore_for_file: unnecessary_getters_setters
 
+import 'package:flutter/material.dart';
+
 import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
@@ -105,6 +107,16 @@ class TimeStruct extends BaseStruct {
           false,
         ),
       );
+
+  // toJsonメソッドを追加
+  Map<String, dynamic> toJson() {
+    return {
+      'experimentTime': experimentTime,
+      'interval': interval,
+      'measurementNumber': measurementNumber,
+      'title': title,
+    };
+  }
 
   @override
   String toString() => 'TimeStruct(${toMap()})';

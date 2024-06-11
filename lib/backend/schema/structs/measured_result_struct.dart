@@ -161,6 +161,18 @@ class MeasuredResultStruct extends BaseStruct {
         ),
       );
 
+  // toJsonメソッドを追加
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'date': date?.toIso8601String(),
+      'time': time.toJson(),
+      'subject': subject.toJson(),
+      'items': items.map((e) => e.toJson()).toList(),
+      'results': results.map((e) => e.toJson()).toList(),
+    };
+  }
+
   @override
   String toString() => 'MeasuredResultStruct(${toMap()})';
 

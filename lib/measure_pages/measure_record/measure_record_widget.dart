@@ -110,7 +110,7 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                                       FFAppState()
                                           .TemporaryResult
                                           .where((e) =>
-                                              e.type.name ==
+                                              e.typename ==
                                               measureItemsItem.name)
                                           .toList()
                                           .last
@@ -138,13 +138,14 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                             : false) {
                           FFAppState().addToTemporaryResult(MeasuredItemStruct(
                             passedtime: widget.time,
-                            type:
-                                FFAppState().MeasurementItems[_model.repeater],
                             result:
                                 _model.mesurementSliderModels.getValueAtIndex(
                               _model.repeater,
                               (m) => m.sliderValue,
                             ),
+                            typename: FFAppState()
+                                .MeasurementItems[_model.repeater]
+                                .name,
                           ));
                           setState(() {});
                           _model.repeater = _model.repeater + 1;

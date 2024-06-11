@@ -5,9 +5,9 @@ import 'package:from_css_color/from_css_color.dart';
 
 import '/backend/schema/structs/index.dart';
 
-import '../../flutter_flow/lat_lng.dart';
-import '../../flutter_flow/place.dart';
-import '../../flutter_flow/uploaded_file.dart';
+import '../lat_lng.dart';
+import '../place.dart';
+import '../uploaded_file.dart';
 
 /// SERIALIZATION HELPERS
 

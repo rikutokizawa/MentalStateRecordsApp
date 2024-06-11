@@ -89,10 +89,7 @@ class FFAppState extends ChangeNotifier {
 
   late SharedPreferences prefs;
 
-  List<SubjectStruct> _Subjects = [
-    SubjectStruct.fromSerializableMap(
-        jsonDecode('{\"name\":\"木澤 陸斗\",\"sex\":\"true\"}'))
-  ];
+  List<SubjectStruct> _Subjects = [];
   List<SubjectStruct> get Subjects => _Subjects;
   set Subjects(List<SubjectStruct> _value) {
     _Subjects = _value;
@@ -133,10 +130,7 @@ class FFAppState extends ChangeNotifier {
         'ff_Subjects', _Subjects.map((x) => x.serialize()).toList());
   }
 
-  List<MeasurementItemStruct> _MeasurementItems = [
-    MeasurementItemStruct.fromSerializableMap(jsonDecode(
-        '{\"name\":\"温冷感\",\"UpperName\":\"暑い\",\"BottomName\":\"寒い\",\"Step\":\"7\",\"details\":\"現在の温冷感を7段階で評価してください．\",\"valid\":\"true\"}'))
-  ];
+  List<MeasurementItemStruct> _MeasurementItems = [];
   List<MeasurementItemStruct> get MeasurementItems => _MeasurementItems;
   set MeasurementItems(List<MeasurementItemStruct> _value) {
     _MeasurementItems = _value;
@@ -178,10 +172,7 @@ class FFAppState extends ChangeNotifier {
         _MeasurementItems.map((x) => x.serialize()).toList());
   }
 
-  List<MeasuredResultStruct> _AllResults = [
-    MeasuredResultStruct.fromSerializableMap(jsonDecode(
-        '{\"date\":\"1717752178349\",\"results\":\"[\\\"{\\\\\\\"type\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"温冷感\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"UpperName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"暑い\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"BottomName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"寒い\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"Step\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"7\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"details\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"温冷感を教えてね\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"valid\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"false\\\\\\\\\\\\\\\"}\\\\\\\",\\\\\\\"passedtime\\\\\\\":\\\\\\\"10\\\\\\\",\\\\\\\"result\\\\\\\":\\\\\\\"2.0\\\\\\\"}\\\",\\\"{\\\\\\\"type\\\\\\\":\\\\\\\"{\\\\\\\\\\\\\\\"name\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"温冷感\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"UpperName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"暑い\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"BottomName\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"寒い\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"Step\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"7\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"details\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"温冷感を教えてね\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"valid\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"false\\\\\\\\\\\\\\\"}\\\\\\\",\\\\\\\"passedtime\\\\\\\":\\\\\\\"20\\\\\\\",\\\\\\\"result\\\\\\\":\\\\\\\"3.0\\\\\\\"}\\\"]\",\"title\":\"テスト用データ\",\"time\":\"{\\\"title\\\":\\\"テスト用試験時間\\\",\\\"MeasurementNumber\\\":\\\"2\\\",\\\"ExperimentTime\\\":\\\"20\\\",\\\"Interval\\\":\\\"10\\\"}\",\"subject\":\"{\\\"name\\\":\\\"へのへのもへじ\\\",\\\"sex\\\":\\\"true\\\",\\\"birthbay\\\":\\\"1717752178349\\\"}\"}'))
-  ];
+  List<MeasuredResultStruct> _AllResults = [];
   List<MeasuredResultStruct> get AllResults => _AllResults;
   set AllResults(List<MeasuredResultStruct> _value) {
     _AllResults = _value;
@@ -222,10 +213,7 @@ class FFAppState extends ChangeNotifier {
         'ff_AllResults', _AllResults.map((x) => x.serialize()).toList());
   }
 
-  List<TimeStruct> _ExperimentTime = [
-    TimeStruct.fromSerializableMap(jsonDecode(
-        '{\"Interval\":\"60\",\"ExperimentTime\":\"600\",\"MeasurementNumber\":\"10\"}'))
-  ];
+  List<TimeStruct> _ExperimentTime = [];
   List<TimeStruct> get ExperimentTime => _ExperimentTime;
   set ExperimentTime(List<TimeStruct> _value) {
     _ExperimentTime = _value;

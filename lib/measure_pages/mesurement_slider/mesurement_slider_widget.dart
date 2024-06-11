@@ -145,9 +145,9 @@ class _MesurementSliderWidgetState extends State<MesurementSliderWidget> {
                   widget.initialvalue,
                   0.0,
                 ),
-                label: _model.sliderValue?.toStringAsFixed(0),
+                label: _model.sliderValue?.toStringAsFixed(1),
                 onChanged: (newValue) {
-                  newValue = double.parse(newValue.toStringAsFixed(0));
+                  newValue = double.parse(newValue.toStringAsFixed(1));
                   setState(() => _model.sliderValue = newValue);
                 },
               ),

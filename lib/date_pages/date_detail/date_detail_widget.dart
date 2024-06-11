@@ -339,11 +339,15 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                             size: 32.0,
                           ),
                           onPressed: () async {
-                            await Share.share(
-                              (widget.date!.toMap()).toString(),
-                              sharePositionOrigin:
-                                  getWidgetBoundingBox(context),
-                            );
+                            if (widget.date != null) {
+                              final jsonString =
+                                  jsonEncode(widget.date!.toJson());
+                              await Share.share(
+                                jsonString,
+                                sharePositionOrigin:
+                                    getWidgetBoundingBox(context),
+                              );
+                            }
                           },
                         ),
                       ),
@@ -495,7 +499,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                         final typefilter = widget.date?.results
                                                 ?.where((e) =>
                                                     valueOrDefault<bool>(
-                                                      resultItem == e.type.name,
+                                                      resultItem == e.typename,
                                                       false,
                                                     ))
                                                 .toList()
@@ -532,8 +536,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                     Expanded(
                                                       flex: 1,
                                                       child: Text(
-                                                        typefilterItem
-                                                            .type.name,
+                                                        typefilterItem.typename,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -634,7 +637,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                   .where((e) =>
                                                       valueOrDefault<bool>(
                                                         resultItem ==
-                                                            e.type.name,
+                                                            e.typename,
                                                         false,
                                                       ))
                                                   .toList()
@@ -644,7 +647,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                   .where((e) =>
                                                       valueOrDefault<bool>(
                                                         resultItem ==
-                                                            e.type.name,
+                                                            e.typename,
                                                         false,
                                                       ))
                                                   .toList()
@@ -865,7 +868,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                             Expanded(
                                               flex: 1,
                                               child: Text(
-                                                allitemsItem.type.name,
+                                                allitemsItem.typename,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium

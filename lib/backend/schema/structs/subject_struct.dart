@@ -82,6 +82,15 @@ class SubjectStruct extends BaseStruct {
         ),
       );
 
+  // toJsonメソッドを追加
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'sex': sex,
+      'birthday': birthbay?.toIso8601String(),
+    };
+  }
+
   @override
   String toString() => 'SubjectStruct(${toMap()})';
 
