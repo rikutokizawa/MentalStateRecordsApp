@@ -1,7 +1,5 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import 'package:flutter/material.dart';
-
 import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';

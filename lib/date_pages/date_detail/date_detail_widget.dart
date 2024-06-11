@@ -3,11 +3,8 @@ import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'date_detail_model.dart';
 export 'date_detail_model.dart';
@@ -177,8 +174,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   ),
                                   Text(
                                     valueOrDefault<String>(
-                                      widget.date?.time?.experimentTime
-                                          ?.toString(),
+                                      widget.date?.time.experimentTime
+                                          .toString(),
                                       '0',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -217,7 +214,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   ),
                                   Text(
                                     valueOrDefault<String>(
-                                      widget.date?.time?.interval?.toString(),
+                                      widget.date?.time.interval.toString(),
                                       '0',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -254,11 +251,11 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                         formatNumber(
                                           (valueOrDefault<int>(
                                                     widget.date?.time
-                                                        ?.experimentTime,
+                                                        .experimentTime,
                                                     1,
                                                   ) /
                                                   valueOrDefault<int>(
-                                                    widget.date?.time?.interval,
+                                                    widget.date?.time.interval,
                                                     1,
                                                   ))
                                               .floor(),
@@ -309,7 +306,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   ),
                                   Text(
                                     valueOrDefault<String>(
-                                      widget.date?.subject?.name,
+                                      widget.date?.subject.name,
                                       'へのへのもへじ',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -359,11 +356,9 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
               ),
               Builder(
                 builder: (context) {
-                  final result = widget.date?.items
-                          ?.map((e) => e.name)
-                          .toList()
-                          ?.toList() ??
-                      [];
+                  final result =
+                      widget.date?.items.map((e) => e.name).toList().toList() ??
+                          [];
                   return ListView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     padding: EdgeInsets.zero,
@@ -501,13 +496,13 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                     Builder(
                                       builder: (context) {
                                         final typefilter = widget.date?.results
-                                                ?.where((e) =>
+                                                .where((e) =>
                                                     valueOrDefault<bool>(
                                                       resultItem == e.typename,
                                                       false,
                                                     ))
                                                 .toList()
-                                                ?.toList() ??
+                                                .toList() ??
                                             [];
                                         return ListView.builder(
                                           physics:
@@ -849,7 +844,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                             Builder(
                               builder: (context) {
                                 final allitems =
-                                    widget.date?.results?.toList() ?? [];
+                                    widget.date?.results.toList() ?? [];
                                 return ListView.builder(
                                   physics: const NeverScrollableScrollPhysics(),
                                   padding: EdgeInsets.zero,
