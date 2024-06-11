@@ -71,7 +71,8 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
           centerTitle: false,
           elevation: 2.0,
         ),
-        body: Column(
+        body: SingleChildScrollView(
+            child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -256,7 +257,7 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
               ),
             ),
           ],
-        ),
+        )),
       ),
     );
   }

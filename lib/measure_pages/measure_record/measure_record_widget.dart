@@ -82,6 +82,7 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                             ))
                         .toList();
                     return ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       padding: EdgeInsets.zero,
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,

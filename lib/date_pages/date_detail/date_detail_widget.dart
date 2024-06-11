@@ -365,6 +365,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                           ?.toList() ??
                       [];
                   return ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
@@ -509,6 +510,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                 ?.toList() ??
                                             [];
                                         return ListView.builder(
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
                                           padding: EdgeInsets.zero,
                                           shrinkWrap: true,
                                           scrollDirection: Axis.vertical,
@@ -848,6 +851,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                 final allitems =
                                     widget.date?.results?.toList() ?? [];
                                 return ListView.builder(
+                                  physics: const NeverScrollableScrollPhysics(),
                                   padding: EdgeInsets.zero,
                                   shrinkWrap: true,
                                   scrollDirection: Axis.vertical,

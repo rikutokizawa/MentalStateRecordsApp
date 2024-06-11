@@ -315,6 +315,8 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                                           .MeasurementItems
                                                           .toList();
                                                   return ListView.builder(
+                                                    physics:
+                                                        const NeverScrollableScrollPhysics(),
                                                     padding: EdgeInsets.zero,
                                                     shrinkWrap: true,
                                                     scrollDirection:

@@ -360,6 +360,7 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                             final measurementtime =
                                 widget.measurementtime!.toList();
                             return ListView.builder(
+                              physics: const NeverScrollableScrollPhysics(),
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
                               scrollDirection: Axis.vertical,

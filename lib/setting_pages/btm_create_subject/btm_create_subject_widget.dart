@@ -242,7 +242,7 @@ class _BtmCreateSubjectWidgetState extends State<BtmCreateSubjectWidget> {
                                           mode: CupertinoDatePickerMode.date,
                                           minimumDate: DateTime
                                               .fromMicrosecondsSinceEpoch(
-                                                  986137200000000),
+                                                  000000000000000),
                                           initialDateTime: DateTime
                                               .fromMicrosecondsSinceEpoch(
                                                   986137200000000),
