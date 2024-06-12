@@ -338,19 +338,15 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                           ),
                           FlutterFlowTimer(
                             initialTime: _model.timerInitialTimeMs2,
-                            getDisplayTime: (value) =>
-                                StopWatchTimer.getDisplayTime(
-                              value,
-                              hours: false,
-                              minute: false,
-                              milliSecond: false,
-                            ),
+                            getDisplayTime: (value) => (value / 1000)
+                                .toStringAsFixed(0), // ミリ秒を秒に変換して表示
                             controller: _model.timerController2,
                             updateStateInterval:
                                 const Duration(milliseconds: 1000),
                             onChanged: (value, displayTime, shouldUpdate) {
                               _model.timerMilliseconds2 = value;
-                              _model.timerValue2 = displayTime;
+                              _model.timerValue2 =
+                                  (value / 1000).toStringAsFixed(0);
                               if (shouldUpdate) setState(() {});
                             },
                             textAlign: TextAlign.start,

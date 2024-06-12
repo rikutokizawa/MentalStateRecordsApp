@@ -102,7 +102,7 @@ class MeasuredResultStruct extends BaseStruct {
         'results': serializeParam(
           _results,
           ParamType.DataStruct,
-          true,
+          isList: true,
         ),
         'title': serializeParam(
           _title,
@@ -119,7 +119,7 @@ class MeasuredResultStruct extends BaseStruct {
         'items': serializeParam(
           _items,
           ParamType.DataStruct,
-          true,
+          isList: true,
         ),
       }.withoutNulls;
 

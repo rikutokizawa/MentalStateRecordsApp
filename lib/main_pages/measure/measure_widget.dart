@@ -8,6 +8,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'measure_model.dart';
 export 'measure_model.dart';
@@ -730,7 +731,7 @@ class _MeasureWidgetState extends State<MeasureWidget> {
                                               _model.dropDownValue1!]
                                           .interval),
                                   ParamType.int,
-                                  true,
+                                  isList: true,
                                 ),
                               }.withoutNulls,
                             );
