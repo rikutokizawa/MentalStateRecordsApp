@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import 'measure_sta_model.dart';
 export 'measure_sta_model.dart';
 
@@ -243,21 +244,47 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                             0.0, 24.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            _model.timerController1.onStopTimer();
-                            _model.timerController2.onStopTimer();
-                            FFAppState().updateTemporaryRecordStruct(
-                              (e) => e
-                                ..results =
-                                    FFAppState().TemporaryResult.toList(),
-                            );
-                            setState(() {});
-                            FFAppState()
-                                .addToAllResults(FFAppState().TemporaryRecord);
-                            setState(() {});
-                            _model.measuring = !_model.measuring;
-                            setState(() {});
+                            var confirmDialogResponse = await showDialog<bool>(
+                                  context: context,
+                                  builder: (alertDialogContext) {
+                                    return AlertDialog(
+                                      title: const Text('データを記録して終了します'),
+                                      content: const Text('よろしいですか？'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () => Navigator.pop(
+                                              alertDialogContext, false),
+                                          child: const Text('続ける'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () => Navigator.pop(
+                                              alertDialogContext, true),
+                                          child: const Text('終了する'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                ) ??
+                                false;
+                            if (confirmDialogResponse) {
+                              _model.timerController1.onStopTimer();
+                              _model.timerController2.onStopTimer();
+                              FFAppState().updateTemporaryRecordStruct(
+                                (e) => e
+                                  ..results =
+                                      FFAppState().TemporaryResult.toList(),
+                              );
+                              setState(() {});
+                              FFAppState().addToAllResults(
+                                  FFAppState().TemporaryRecord);
+                              setState(() {});
+                              _model.measuring = !_model.measuring;
+                              setState(() {});
 
-                            context.pushNamed('date');
+                              context.pushNamed('date');
+                            } else {
+                              return;
+                            }
                           },
                           text: '測定終了',
                           options: FFButtonOptions(

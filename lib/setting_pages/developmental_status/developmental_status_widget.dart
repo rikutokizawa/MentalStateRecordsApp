@@ -128,6 +128,22 @@ class _DevelopmentalStatusWidgetState extends State<DevelopmentalStatusWidget> {
                           ),
                         ),
                       ),
+                      Align(
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              28.0, 12.0, 0.0, 0.0),
+                          child: Text(
+                            'ver1.0：基本機能リリース（2024.06.12）',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),

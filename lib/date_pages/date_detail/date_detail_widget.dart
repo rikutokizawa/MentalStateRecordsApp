@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
@@ -328,27 +329,69 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 0.0, 24.0, 0.0),
                         child: FlutterFlowIconButton(
-                          borderRadius: 32.0,
-                          borderWidth: 1.0,
-                          buttonSize: 60.0,
-                          fillColor: FlutterFlowTheme.of(context).tertiary,
-                          icon: Icon(
-                            Icons.ios_share,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 32.0,
-                          ),
-                          onPressed: () async {
-                            if (widget.date != null) {
-                              final jsonString =
-                                  jsonEncode(widget.date!.toJson());
-                              await Share.share(
-                                jsonString,
-                                sharePositionOrigin:
-                                    getWidgetBoundingBox(context),
-                              );
-                            }
-                          },
-                        ),
+                            borderRadius: 32.0,
+                            borderWidth: 1.0,
+                            buttonSize: 60.0,
+                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            icon: Icon(
+                              Icons.ios_share,
+                              color: FlutterFlowTheme.of(context).info,
+                              size: 32.0,
+                            ),
+                            onPressed: () async {
+                              var confirmDialogResponse =
+                                  await showDialog<bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: const Text('データを出力します'),
+                                            content:
+                                                const Text('出力形式を選択してください'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: const Text('CSVテキスト'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: const Text('JSONテキスト'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
+                              if (confirmDialogResponse) {
+                                // JSON形式の出力
+                                if (widget.date != null) {
+                                  final jsonString =
+                                      jsonEncode(widget.date!.toJson());
+                                  await Share.share(
+                                    jsonString,
+                                    sharePositionOrigin:
+                                        getWidgetBoundingBox(context),
+                                  );
+                                }
+                              } else {
+                                // CSV形式の出力
+                                if (widget.date != null) {
+                                  final jsonString =
+                                      jsonEncode(widget.date!.toJson());
+                                  final csvString = await functions
+                                      .convertJsonToCsv(jsonString);
+                                  await Share.share(
+                                    csvString,
+                                    sharePositionOrigin:
+                                        getWidgetBoundingBox(context),
+                                  );
+                                }
+                              }
+                              // onPressed: () async {
+
+                              // },
+                            }),
                       ),
                     ),
                   ],
