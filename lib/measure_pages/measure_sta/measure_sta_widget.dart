@@ -172,6 +172,7 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                         ),
                       ),
                     ),
+                    // Generated code for this Button Widget...
                     if (!_model.measuring)
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -183,18 +184,8 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                             FFAppState().updateTemporaryRecordStruct(
                               (e) => e
                                 ..date = getCurrentTimestamp
-                                ..time = TimeStruct(
-                                  title: 'テスト',
-                                  measurementNumber: 5,
-                                  experimentTime: 100,
-                                  interval: 20,
-                                )
-                                ..subject = SubjectStruct(
-                                  name: 'おやつ太郎',
-                                  sex: true,
-                                  birthbay: DateTime.fromMicrosecondsSinceEpoch(
-                                      1718031600000000),
-                                )
+                                ..time = widget.time
+                                ..subject = widget.subject
                                 ..items =
                                     FFAppState().MeasurementItems.toList(),
                             );
