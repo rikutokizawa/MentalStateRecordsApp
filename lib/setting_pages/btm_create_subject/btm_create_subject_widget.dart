@@ -208,7 +208,7 @@ class _BtmCreateSubjectWidgetState extends State<BtmCreateSubjectWidget> {
                               await showModalBottomSheet<bool>(
                                   context: context,
                                   builder: (context) {
-                                    final _datePickedCupertinoTheme =
+                                    final datePickedCupertinoTheme =
                                         CupertinoTheme.of(context);
                                     return Container(
                                       height:
@@ -219,8 +219,8 @@ class _BtmCreateSubjectWidgetState extends State<BtmCreateSubjectWidget> {
                                           .secondaryBackground,
                                       child: CupertinoTheme(
                                         data:
-                                            _datePickedCupertinoTheme.copyWith(
-                                          textTheme: _datePickedCupertinoTheme
+                                            datePickedCupertinoTheme.copyWith(
+                                          textTheme: datePickedCupertinoTheme
                                               .textTheme
                                               .copyWith(
                                             dateTimePickerTextStyle:

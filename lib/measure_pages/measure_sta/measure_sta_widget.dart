@@ -642,7 +642,7 @@ class _MeasureStaWidgetState extends State<MeasureStaWidget> {
                                   },
                                 ).then((value) => safeSetState(() {}));
                               },
-                              text: '暇すぎ',
+                              text: '暇',
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 57.0,

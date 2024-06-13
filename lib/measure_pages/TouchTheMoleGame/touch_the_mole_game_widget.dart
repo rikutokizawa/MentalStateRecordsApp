@@ -63,7 +63,7 @@ class _TouchTheMoleGameWidgetState extends State<TouchTheMoleGameWidget> {
       });
 
       Future.delayed(
-          const Duration(milliseconds: 600), () => _moveMole(constraints));
+          const Duration(milliseconds: 450), () => _moveMole(constraints));
     }
   }
 
