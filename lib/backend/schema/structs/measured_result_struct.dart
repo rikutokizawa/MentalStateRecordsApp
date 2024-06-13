@@ -1,6 +1,5 @@
 // ignore_for_file: unnecessary_getters_setters
 
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -102,7 +101,7 @@ class MeasuredResultStruct extends BaseStruct {
         'results': serializeParam(
           _results,
           ParamType.DataStruct,
-          true,
+          isList: true,
         ),
         'title': serializeParam(
           _title,
@@ -119,7 +118,7 @@ class MeasuredResultStruct extends BaseStruct {
         'items': serializeParam(
           _items,
           ParamType.DataStruct,
-          true,
+          isList: true,
         ),
       }.withoutNulls;
 
@@ -160,6 +159,18 @@ class MeasuredResultStruct extends BaseStruct {
           structBuilder: MeasurementItemStruct.fromSerializableMap,
         ),
       );
+
+  // toJsonメソッドを追加
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'date': date?.toIso8601String(),
+      'time': time.toJson(),
+      'subject': subject.toJson(),
+      'items': items.map((e) => e.toJson()).toList(),
+      'results': results.map((e) => e.toJson()).toList(),
+    };
+  }
 
   @override
   String toString() => 'MeasuredResultStruct(${toMap()})';

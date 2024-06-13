@@ -142,6 +142,18 @@ class MeasurementItemStruct extends BaseStruct {
         ),
       );
 
+  // toJsonメソッドを追加
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'upperName': upperName,
+      'bottomName': bottomName,
+      'step': step,
+      'details': details,
+      'valid': valid,
+    };
+  }
+
   @override
   String toString() => 'MeasurementItemStruct(${toMap()})';
 

@@ -3,11 +3,9 @@ import '/flutter_flow/flutter_flow_charts.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'date_detail_model.dart';
 export 'date_detail_model.dart';
@@ -62,7 +60,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -78,7 +76,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -97,13 +95,13 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                   children: [
                     Expanded(
                       child: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            4.0, 4.0, 4.0, 4.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -133,7 +131,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 6.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -161,7 +159,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 6.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -177,8 +175,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   ),
                                   Text(
                                     valueOrDefault<String>(
-                                      widget.date?.time?.experimentTime
-                                          ?.toString(),
+                                      widget.date?.time.experimentTime
+                                          .toString(),
                                       '0',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -201,7 +199,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 6.0, 0.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -217,7 +215,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   ),
                                   Text(
                                     valueOrDefault<String>(
-                                      widget.date?.time?.interval?.toString(),
+                                      widget.date?.time.interval.toString(),
                                       '0',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -246,18 +244,19 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       valueOrDefault<String>(
                                         formatNumber(
                                           (valueOrDefault<int>(
                                                     widget.date?.time
-                                                        ?.experimentTime,
+                                                        .experimentTime,
                                                     1,
                                                   ) /
                                                   valueOrDefault<int>(
-                                                    widget.date?.time?.interval,
+                                                    widget.date?.time.interval,
                                                     1,
                                                   ))
                                               .floor(),
@@ -275,8 +274,9 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 0.0, 0.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            8.0, 0.0, 0.0, 0.0),
                                     child: Text(
                                       '回測定）',
                                       style: FlutterFlowTheme.of(context)
@@ -291,7 +291,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 6.0, 0.0, 12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -307,7 +307,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   ),
                                   Text(
                                     valueOrDefault<String>(
-                                      widget.date?.subject?.name,
+                                      widget.date?.subject.name,
                                       'へのへのもへじ',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -326,26 +326,72 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                     ),
                     Builder(
                       builder: (context) => Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 24.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 24.0, 0.0),
                         child: FlutterFlowIconButton(
-                          borderRadius: 32.0,
-                          borderWidth: 1.0,
-                          buttonSize: 60.0,
-                          fillColor: FlutterFlowTheme.of(context).tertiary,
-                          icon: Icon(
-                            Icons.ios_share,
-                            color: FlutterFlowTheme.of(context).info,
-                            size: 32.0,
-                          ),
-                          onPressed: () async {
-                            await Share.share(
-                              (widget.date!.toMap()).toString(),
-                              sharePositionOrigin:
-                                  getWidgetBoundingBox(context),
-                            );
-                          },
-                        ),
+                            borderRadius: 32.0,
+                            borderWidth: 1.0,
+                            buttonSize: 60.0,
+                            fillColor: FlutterFlowTheme.of(context).tertiary,
+                            icon: Icon(
+                              Icons.ios_share,
+                              color: FlutterFlowTheme.of(context).info,
+                              size: 32.0,
+                            ),
+                            onPressed: () async {
+                              var confirmDialogResponse =
+                                  await showDialog<bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: const Text('データを出力します'),
+                                            content:
+                                                const Text('出力形式を選択してください'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: const Text('CSVテキスト'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: const Text('JSONテキスト'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
+                              if (confirmDialogResponse) {
+                                // JSON形式の出力
+                                if (widget.date != null) {
+                                  final jsonString =
+                                      jsonEncode(widget.date!.toJson());
+                                  await Share.share(
+                                    jsonString,
+                                    sharePositionOrigin:
+                                        getWidgetBoundingBox(context),
+                                  );
+                                }
+                              } else {
+                                // CSV形式の出力
+                                if (widget.date != null) {
+                                  final jsonString =
+                                      jsonEncode(widget.date!.toJson());
+                                  final csvString = await functions
+                                      .convertJsonToCsv(jsonString);
+                                  await Share.share(
+                                    csvString,
+                                    sharePositionOrigin:
+                                        getWidgetBoundingBox(context),
+                                  );
+                                }
+                              }
+                              // onPressed: () async {
+
+                              // },
+                            }),
                       ),
                     ),
                   ],
@@ -353,12 +399,11 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
               ),
               Builder(
                 builder: (context) {
-                  final result = widget.date?.items
-                          ?.map((e) => e.name)
-                          .toList()
-                          ?.toList() ??
-                      [];
+                  final result =
+                      widget.date?.items.map((e) => e.name).toList().toList() ??
+                          [];
                   return ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
@@ -366,7 +411,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                     itemBuilder: (context, resultIndex) {
                       final resultItem = result[resultIndex];
                       return Container(
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Container(
                           width: double.infinity,
                           color: Colors.white,
@@ -374,7 +419,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                             initialExpanded: false,
                             child: ExpandablePanel(
                               header: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   resultItem,
@@ -387,7 +432,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                 ),
                               ),
                               collapsed: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
@@ -408,11 +453,11 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.0, -1.0),
+                                      alignment: const AlignmentDirectional(
+                                          -1.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 8.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(12.0, 8.0, 0.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -421,7 +466,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                 BorderRadius.circular(0.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Text(
                                               '生データ',
                                               style: FlutterFlowTheme.of(
@@ -440,8 +485,9 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 0.0, 12.0, 0.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              12.0, 0.0, 12.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -487,21 +533,23 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                       ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(width: 8.0)),
+                                        ].divide(const SizedBox(width: 8.0)),
                                       ),
                                     ),
                                     Builder(
                                       builder: (context) {
                                         final typefilter = widget.date?.results
-                                                ?.where((e) =>
+                                                .where((e) =>
                                                     valueOrDefault<bool>(
-                                                      resultItem == e.type.name,
+                                                      resultItem == e.typename,
                                                       false,
                                                     ))
                                                 .toList()
-                                                ?.toList() ??
+                                                .toList() ??
                                             [];
                                         return ListView.builder(
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
                                           padding: EdgeInsets.zero,
                                           shrinkWrap: true,
                                           scrollDirection: Axis.vertical,
@@ -522,8 +570,9 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                         .accent4,
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         12.0, 0.0, 12.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
@@ -532,8 +581,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                     Expanded(
                                                       flex: 1,
                                                       child: Text(
-                                                        typefilterItem
-                                                            .type.name,
+                                                        typefilterItem.typename,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -580,8 +628,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                                 ),
                                                       ),
                                                     ),
-                                                  ].divide(
-                                                      SizedBox(width: 8.0)),
+                                                  ].divide(const SizedBox(
+                                                      width: 8.0)),
                                                 ),
                                               ),
                                             );
@@ -590,11 +638,11 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                       },
                                     ),
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.0, -1.0),
+                                      alignment: const AlignmentDirectional(
+                                          -1.0, -1.0),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 8.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(12.0, 8.0, 0.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
@@ -603,7 +651,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                 BorderRadius.circular(0.0),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(4.0),
+                                            padding: const EdgeInsets.all(4.0),
                                             child: Text(
                                               'グラフ',
                                               style: FlutterFlowTheme.of(
@@ -622,9 +670,10 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 24.0, 24.0, 0.0),
-                                      child: Container(
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              12.0, 24.0, 24.0, 0.0),
+                                      child: SizedBox(
                                         width: 370.0,
                                         height: 230.0,
                                         child: FlutterFlowLineChart(
@@ -634,7 +683,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                   .where((e) =>
                                                       valueOrDefault<bool>(
                                                         resultItem ==
-                                                            e.type.name,
+                                                            e.typename,
                                                         false,
                                                       ))
                                                   .toList()
@@ -644,7 +693,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                   .where((e) =>
                                                       valueOrDefault<bool>(
                                                         resultItem ==
-                                                            e.type.name,
+                                                            e.typename,
                                                         false,
                                                       ))
                                                   .toList()
@@ -674,8 +723,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                             showGrid: true,
                                             showBorder: false,
                                           ),
-                                          axisBounds: AxisBounds(),
-                                          xAxisLabelInfo: AxisLabelInfo(
+                                          axisBounds: const AxisBounds(),
+                                          xAxisLabelInfo: const AxisLabelInfo(
                                             title: '経過時間[s]',
                                             titleTextStyle: TextStyle(
                                               fontSize: 14.0,
@@ -684,7 +733,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                             labelInterval: 100.0,
                                             reservedSize: 18.0,
                                           ),
-                                          yAxisLabelInfo: AxisLabelInfo(
+                                          yAxisLabelInfo: const AxisLabelInfo(
                                             title: '計測値',
                                             titleTextStyle: TextStyle(
                                               fontSize: 14.0,
@@ -699,7 +748,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                   ],
                                 ),
                               ),
-                              theme: ExpandableThemeData(
+                              theme: const ExpandableThemeData(
                                 tapHeaderToExpand: true,
                                 tapBodyToExpand: false,
                                 tapBodyToCollapse: false,
@@ -727,8 +776,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                     controller: _model.expandableExpandableController2,
                     child: ExpandablePanel(
                       header: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           '全てのデータ',
                           style: FlutterFlowTheme.of(context)
@@ -740,8 +789,8 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                         ),
                       ),
                       collapsed: Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -791,7 +840,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 12.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -832,14 +881,15 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                           ),
                                     ),
                                   ),
-                                ].divide(SizedBox(width: 8.0)),
+                                ].divide(const SizedBox(width: 8.0)),
                               ),
                             ),
                             Builder(
                               builder: (context) {
                                 final allitems =
-                                    widget.date?.results?.toList() ?? [];
+                                    widget.date?.results.toList() ?? [];
                                 return ListView.builder(
+                                  physics: const NeverScrollableScrollPhysics(),
                                   padding: EdgeInsets.zero,
                                   shrinkWrap: true,
                                   scrollDirection: Axis.vertical,
@@ -857,15 +907,15 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                 .accent4,
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 12.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(12.0, 0.0, 12.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Expanded(
                                               flex: 1,
                                               child: Text(
-                                                allitemsItem.type.name,
+                                                allitemsItem.typename,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -904,7 +954,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                                                         ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(width: 8.0)),
+                                          ].divide(const SizedBox(width: 8.0)),
                                         ),
                                       ),
                                     );
@@ -915,7 +965,7 @@ class _DateDetailWidgetState extends State<DateDetailWidget> {
                           ],
                         ),
                       ),
-                      theme: ExpandableThemeData(
+                      theme: const ExpandableThemeData(
                         tapHeaderToExpand: true,
                         tapBodyToExpand: false,
                         tapBodyToCollapse: false,

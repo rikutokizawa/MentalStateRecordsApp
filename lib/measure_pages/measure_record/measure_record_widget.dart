@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/measure_pages/mesurement_slider/mesurement_slider_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'measure_record_model.dart';
 export 'measure_record_model.dart';
@@ -62,7 +61,7 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -82,6 +81,7 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                             ))
                         .toList();
                     return ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       padding: EdgeInsets.zero,
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
@@ -110,7 +110,7 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                                       FFAppState()
                                           .TemporaryResult
                                           .where((e) =>
-                                              e.type.name ==
+                                              e.typename ==
                                               measureItemsItem.name)
                                           .toList()
                                           .last
@@ -126,10 +126,10 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                   },
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
+                  alignment: const AlignmentDirectional(0.0, 1.0),
                   child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        0.0, 24.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         while (_model.repeater <
@@ -138,13 +138,14 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                             : false) {
                           FFAppState().addToTemporaryResult(MeasuredItemStruct(
                             passedtime: widget.time,
-                            type:
-                                FFAppState().MeasurementItems[_model.repeater],
                             result:
                                 _model.mesurementSliderModels.getValueAtIndex(
                               _model.repeater,
                               (m) => m.sliderValue,
                             ),
+                            typename: FFAppState()
+                                .MeasurementItems[_model.repeater]
+                                .name,
                           ));
                           setState(() {});
                           _model.repeater = _model.repeater + 1;
@@ -156,10 +157,10 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                       options: FFButtonOptions(
                         width: 200.0,
                         height: 57.0,
-                        padding: EdgeInsetsDirectional.fromSTEB(
+                        padding: const EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
-                        iconPadding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -170,7 +171,7 @@ class _MeasureRecordWidgetState extends State<MeasureRecordWidget> {
                                   fontWeight: FontWeight.bold,
                                 ),
                         elevation: 3.0,
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

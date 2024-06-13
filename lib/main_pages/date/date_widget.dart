@@ -1,10 +1,7 @@
-import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'date_model.dart';
 export 'date_model.dart';
@@ -57,7 +54,7 @@ class _DateWidgetState extends State<DateWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: const [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -85,7 +82,7 @@ class _DateWidgetState extends State<DateWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
@@ -149,9 +146,9 @@ class _DateWidgetState extends State<DateWidget> {
                                   ],
                                 ),
                               ]
-                                  .divide(SizedBox(height: 4.0))
-                                  .addToStart(SizedBox(height: 12.0))
-                                  .addToEnd(SizedBox(height: 12.0)),
+                                  .divide(const SizedBox(height: 4.0))
+                                  .addToStart(const SizedBox(height: 12.0))
+                                  .addToEnd(const SizedBox(height: 12.0)),
                             ),
                           ),
                         ),

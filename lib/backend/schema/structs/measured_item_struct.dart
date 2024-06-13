@@ -7,20 +7,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class MeasuredItemStruct extends BaseStruct {
   MeasuredItemStruct({
-    MeasurementItemStruct? type,
     int? passedtime,
     double? result,
-  })  : _type = type,
-        _passedtime = passedtime,
-        _result = result;
-
-  // "type" field.
-  MeasurementItemStruct? _type;
-  MeasurementItemStruct get type => _type ?? MeasurementItemStruct();
-  set type(MeasurementItemStruct? val) => _type = val;
-  void updateType(Function(MeasurementItemStruct) updateFn) =>
-      updateFn(_type ??= MeasurementItemStruct());
-  bool hasType() => _type != null;
+    String? typename,
+  })  : _passedtime = passedtime,
+        _result = result,
+        _typename = typename;
 
   // "passedtime" field.
   int? _passedtime;
@@ -36,11 +28,17 @@ class MeasuredItemStruct extends BaseStruct {
   void incrementResult(double amount) => _result = result + amount;
   bool hasResult() => _result != null;
 
+  // "typename" field.
+  String? _typename;
+  String get typename => _typename ?? '';
+  set typename(String? val) => _typename = val;
+  bool hasTypename() => _typename != null;
+
   static MeasuredItemStruct fromMap(Map<String, dynamic> data) =>
       MeasuredItemStruct(
-        type: MeasurementItemStruct.maybeFromMap(data['type']),
         passedtime: castToType<int>(data['passedtime']),
         result: castToType<double>(data['result']),
+        typename: data['typename'] as String?,
       );
 
   static MeasuredItemStruct? maybeFromMap(dynamic data) => data is Map
@@ -48,17 +46,13 @@ class MeasuredItemStruct extends BaseStruct {
       : null;
 
   Map<String, dynamic> toMap() => {
-        'type': _type?.toMap(),
         'passedtime': _passedtime,
         'result': _result,
+        'typename': _typename,
       }.withoutNulls;
 
   @override
   Map<String, dynamic> toSerializableMap() => {
-        'type': serializeParam(
-          _type,
-          ParamType.DataStruct,
-        ),
         'passedtime': serializeParam(
           _passedtime,
           ParamType.int,
@@ -67,16 +61,14 @@ class MeasuredItemStruct extends BaseStruct {
           _result,
           ParamType.double,
         ),
+        'typename': serializeParam(
+          _typename,
+          ParamType.String,
+        ),
       }.withoutNulls;
 
   static MeasuredItemStruct fromSerializableMap(Map<String, dynamic> data) =>
       MeasuredItemStruct(
-        type: deserializeStructParam(
-          data['type'],
-          ParamType.DataStruct,
-          false,
-          structBuilder: MeasurementItemStruct.fromSerializableMap,
-        ),
         passedtime: deserializeParam(
           data['passedtime'],
           ParamType.int,
@@ -87,7 +79,21 @@ class MeasuredItemStruct extends BaseStruct {
           ParamType.double,
           false,
         ),
+        typename: deserializeParam(
+          data['typename'],
+          ParamType.String,
+          false,
+        ),
       );
+
+  // toJsonメソッドを追加
+  Map<String, dynamic> toJson() {
+    return {
+      'passedtime': passedtime,
+      'result': result,
+      'typename': typename,
+    };
+  }
 
   @override
   String toString() => 'MeasuredItemStruct(${toMap()})';
@@ -95,22 +101,22 @@ class MeasuredItemStruct extends BaseStruct {
   @override
   bool operator ==(Object other) {
     return other is MeasuredItemStruct &&
-        type == other.type &&
         passedtime == other.passedtime &&
-        result == other.result;
+        result == other.result &&
+        typename == other.typename;
   }
 
   @override
-  int get hashCode => const ListEquality().hash([type, passedtime, result]);
+  int get hashCode => const ListEquality().hash([passedtime, result, typename]);
 }
 
 MeasuredItemStruct createMeasuredItemStruct({
-  MeasurementItemStruct? type,
   int? passedtime,
   double? result,
+  String? typename,
 }) =>
     MeasuredItemStruct(
-      type: type ?? MeasurementItemStruct(),
       passedtime: passedtime,
       result: result,
+      typename: typename,
     );

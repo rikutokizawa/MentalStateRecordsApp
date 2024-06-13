@@ -1,19 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '../../setting_pages/list_of_manual/list_of_manual_widget.dart';
 import '/backend/schema/structs/index.dart';
 
 import '/index.dart';
 import '/main.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -38,32 +33,33 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => NavBarPage(),
+      errorBuilder: (context, state) => const NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => NavBarPage(),
+          builder: (context, _) => const NavBarPage(),
         ),
         FFRoute(
           name: 'date',
           path: '/date',
-          builder: (context, params) =>
-              params.isEmpty ? NavBarPage(initialPage: 'date') : DateWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'date')
+              : const DateWidget(),
         ),
         FFRoute(
           name: 'setting',
           path: '/setting',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'setting')
-              : SettingWidget(),
+              ? const NavBarPage(initialPage: 'setting')
+              : const SettingWidget(),
         ),
         FFRoute(
           name: 'measure',
           path: '/measure',
           builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'measure')
-              : MeasureWidget(),
+              ? const NavBarPage(initialPage: 'measure')
+              : const MeasureWidget(),
         ),
         FFRoute(
           name: 'measure_record',
@@ -101,27 +97,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'ListOfSubjects',
           path: '/listOfSubjects',
-          builder: (context, params) => ListOfSubjectsWidget(),
+          builder: (context, params) => const ListOfSubjectsWidget(),
         ),
         FFRoute(
           name: 'ListOfItems',
           path: '/listOfItems',
-          builder: (context, params) => ListOfItemsWidget(),
+          builder: (context, params) => const ListOfItemsWidget(),
         ),
         FFRoute(
           name: 'ListOfTimes',
           path: '/listOfTimes',
-          builder: (context, params) => ListOfTimesWidget(),
+          builder: (context, params) => const ListOfTimesWidget(),
         ),
         FFRoute(
           name: 'DevelopmentalStatus',
           path: '/developmentalStatus',
-          builder: (context, params) => DevelopmentalStatusWidget(),
+          builder: (context, params) => const DevelopmentalStatusWidget(),
         ),
         FFRoute(
           name: 'ListOfDate',
           path: '/listOfDate',
-          builder: (context, params) => ListOfDateWidget(),
+          builder: (context, params) => const ListOfDateWidget(),
         ),
         FFRoute(
           name: 'DateDetail',
@@ -134,6 +130,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               structBuilder: MeasuredResultStruct.fromSerializableMap,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'ListOfManual',
+          path: '/listOfManual',
+          builder: (context, params) => const ListOfManualWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -299,7 +300,8 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() =>
+      const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

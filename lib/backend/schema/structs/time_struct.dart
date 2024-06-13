@@ -106,6 +106,16 @@ class TimeStruct extends BaseStruct {
         ),
       );
 
+  // toJsonメソッドを追加
+  Map<String, dynamic> toJson() {
+    return {
+      'experimentTime': experimentTime,
+      'interval': interval,
+      'measurementNumber': measurementNumber,
+      'title': title,
+    };
+  }
+
   @override
   String toString() => 'TimeStruct(${toMap()})';
 

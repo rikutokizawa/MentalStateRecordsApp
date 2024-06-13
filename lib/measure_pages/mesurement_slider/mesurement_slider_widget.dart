@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'mesurement_slider_model.dart';
 export 'mesurement_slider_model.dart';
 
@@ -14,7 +12,7 @@ class MesurementSliderWidget extends StatefulWidget {
     this.parameter3,
     this.parameter4,
     double? initialvalue,
-  }) : this.initialvalue = initialvalue ?? 0.0;
+  }) : initialvalue = initialvalue ?? 0.0;
 
   final String? parameter1;
   final String? parameter2;
@@ -53,12 +51,12 @@ class _MesurementSliderWidgetState extends State<MesurementSliderWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               blurRadius: 5.0,
               color: Color(0x3416202A),
@@ -75,13 +73,13 @@ class _MesurementSliderWidgetState extends State<MesurementSliderWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, 0.0),
+                      alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         widget.parameter1!,
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -96,14 +94,14 @@ class _MesurementSliderWidgetState extends State<MesurementSliderWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        12.0, 0.0, 12.0, 0.0),
                     child: Text(
                       widget.parameter2!,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -113,8 +111,8 @@ class _MesurementSliderWidgetState extends State<MesurementSliderWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        12.0, 0.0, 12.0, 0.0),
                     child: Text(
                       widget.parameter3!,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -127,7 +125,7 @@ class _MesurementSliderWidgetState extends State<MesurementSliderWidget> {
               ),
             ),
             SliderTheme(
-              data: SliderThemeData(
+              data: const SliderThemeData(
                 showValueIndicator: ShowValueIndicator.always,
               ),
               child: Slider(
@@ -145,9 +143,9 @@ class _MesurementSliderWidgetState extends State<MesurementSliderWidget> {
                   widget.initialvalue,
                   0.0,
                 ),
-                label: _model.sliderValue?.toStringAsFixed(0),
+                label: _model.sliderValue?.toStringAsFixed(1),
                 onChanged: (newValue) {
-                  newValue = double.parse(newValue.toStringAsFixed(0));
+                  newValue = double.parse(newValue.toStringAsFixed(1));
                   setState(() => _model.sliderValue = newValue);
                 },
               ),
