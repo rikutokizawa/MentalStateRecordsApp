@@ -23,16 +23,32 @@ class _TouchTheMoleGameWidgetState extends State<TouchTheMoleGameWidget> {
   // ----------追加コード----------
   int _score = 0;
   bool _gameStarted = false;
+  bool _isStrongMoleMode = false; // 強いモグラモードの状態
   Timer? _timer;
   int _timeLeft = 30;
   Offset _molePosition = Offset.zero;
 
   final Random _random = Random();
+
+  // モグラの画像リスト
+  final List<String> _normalMoleImages = [
+    'assets/images/mole.png',
+  ];
+  final List<String> _strongMoleImages = [
+    'assets/images/mole2.png',
+    'assets/images/mole3.png',
+    'assets/images/mole4.png',
+  ];
+  late String _currentMoleImage;
+
   void _startGame(BoxConstraints constraints) {
     setState(() {
       _score = 0;
       _gameStarted = true;
       _timeLeft = 30;
+      // _isStrongMoleMode = false;
+      _currentMoleImage =
+          _normalMoleImages[_random.nextInt(_normalMoleImages.length)];
     });
 
     _moveMole(constraints);
@@ -60,10 +76,13 @@ class _TouchTheMoleGameWidgetState extends State<TouchTheMoleGameWidget> {
           _random.nextDouble() * (constraints.maxWidth - 50),
           _random.nextDouble() * (constraints.maxHeight - 50),
         );
+        _currentMoleImage = _isStrongMoleMode
+            ? _strongMoleImages[_random.nextInt(_strongMoleImages.length)]
+            : _normalMoleImages[_random.nextInt(_normalMoleImages.length)];
       });
 
-      Future.delayed(
-          const Duration(milliseconds: 450), () => _moveMole(constraints));
+      Future.delayed(Duration(milliseconds: _isStrongMoleMode ? 350 : 450),
+          () => _moveMole(constraints));
     }
   }
 
@@ -158,6 +177,15 @@ class _TouchTheMoleGameWidgetState extends State<TouchTheMoleGameWidget> {
                         child: LayoutBuilder(builder: (context, constraints) {
                       return Stack(
                         children: <Widget>[
+                          // 強いモグラモードの時に地獄の背景を表示
+                          if (_isStrongMoleMode)
+                            Positioned.fill(
+                              child: Image.asset(
+                                'assets/images/hell_background.png', // 地獄の背景画像を表示
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+
                           Center(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -182,6 +210,21 @@ class _TouchTheMoleGameWidgetState extends State<TouchTheMoleGameWidget> {
                                   style: const TextStyle(fontSize: 24),
                                 ),
                                 const SizedBox(height: 20),
+                                if (FFAppState().HighScore > 50 &&
+                                    !_isStrongMoleMode &&
+                                    !_gameStarted)
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        _isStrongMoleMode = true;
+                                      });
+                                    },
+                                    child: const Text(
+                                      '強いモグラモードを開始',
+                                      style: TextStyle(fontSize: 24),
+                                    ),
+                                  ),
+                                const SizedBox(height: 20),
                                 !_gameStarted
                                     ? ElevatedButton(
                                         onPressed: () =>
@@ -202,7 +245,7 @@ class _TouchTheMoleGameWidgetState extends State<TouchTheMoleGameWidget> {
                               child: GestureDetector(
                                 onTap: _incrementScore,
                                 child: Image.asset(
-                                  'assets/images/mole.png', // モグラの画像を配置
+                                  _currentMoleImage, // ランダムに選択されたモグラの画像
                                   width: 50,
                                   height: 50,
                                 ),

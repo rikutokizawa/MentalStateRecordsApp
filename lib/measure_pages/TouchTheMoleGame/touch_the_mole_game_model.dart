@@ -6,6 +6,7 @@ class TouchTheMoleGameModel extends FlutterFlowModel<TouchTheMoleGameWidget> {
   ///  Local state fields for this component.
 
   int? highscore = 0;
+  int? stronghighscore = 0;
 
   @override
   void initState(BuildContext context) {}

@@ -109,6 +109,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _HighScore = prefs.getInt('ff_HighScore') ?? _HighScore;
     });
+    _safeInit(() {
+      _StrongHighScore = prefs.getInt('ff_StrongHighScore') ?? _StrongHighScore;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -340,6 +343,13 @@ class FFAppState extends ChangeNotifier {
   set HighScore(int value) {
     _HighScore = value;
     prefs.setInt('ff_HighScore', value);
+  }
+
+  int _StrongHighScore = 0;
+  int get StrongHighScore => _StrongHighScore;
+  set StrongHighScore(int value) {
+    _StrongHighScore = value;
+    prefs.setInt('ff_StrongHighScore', value);
   }
 }
 
